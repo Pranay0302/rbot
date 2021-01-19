@@ -1,5 +1,6 @@
 from decouple import config
-import praw 
+import praw
+import time
 
 def auth():
     reddit = praw.Reddit(
@@ -9,6 +10,13 @@ def auth():
      username=config("username"),
      user_agent=config("user_agent")
     )
-    print(reddit.user.me())
+    # print(reddit.user.me())
+    return reddit
 
-auth()
+def extract(reddit):
+    subreddit = reddit.subreddit("ImaginarySliceOfLife")
+    for submission in subreddit.hot(limit=10):
+        print(submission.title)
+    print("<----done---->")
+    exit(0)
+
