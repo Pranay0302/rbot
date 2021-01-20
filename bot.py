@@ -1,6 +1,7 @@
 from decouple import config
 import praw
 import time
+import requests
 
 
 def auth():
@@ -23,7 +24,8 @@ def extract(reddit):
         subreddit = reddit.subreddit(f)
         for submission in subreddit.hot(limit=30):
              x = submission.url
-             print(x)
+             r = requests.get(x, allow_redirects=True)
+             open('./img/awesome.jpg', 'wb').write(r.content)
         print("<----done---->")
         exit(0)
     except Exception as err:
