@@ -8,4 +8,4 @@ while reddit:
         bot.extract(reddit)
     except Exception as err:
         print(err)
-        exit(0)
+        time.sleep(20)
