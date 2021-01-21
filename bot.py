@@ -2,7 +2,7 @@ from decouple import config
 import praw
 import time
 import requests
-
+import random
 
 def auth():
     reddit = praw.Reddit(
@@ -22,11 +22,14 @@ def extract(reddit):
         f = subs.read()
     try:
         subreddit = reddit.subreddit(f)
-        for submission in subreddit.hot(limit=30):
+        for submission in subreddit.hot(limit=10):
              x = submission.url
              r = requests.get(x, allow_redirects=True)
-             open('./img/awesome.jpg', 'wb').write(r.content)
+             for i in range(0,1):
+                open(f'./img/{random.random()}.jpg', 'wb').write(r.content)
         print("<----done---->")
+        print("downloaded")
+        print("<----sugoi---->")
         exit(0)
     except Exception as err:
         print(err)
