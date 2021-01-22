@@ -22,7 +22,7 @@ def extract(reddit):
         f = subs.read()
     try:
         subreddit = reddit.subreddit(f)
-        for submission in subreddit.hot(limit=10):
+        for submission in subreddit.hot(limit=25):
              x = submission.url
              r = requests.get(x, allow_redirects=True)
              for i in range(0,1):
