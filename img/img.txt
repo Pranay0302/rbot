@@ -1,1 +1,1 @@
-this is the folder where all the images will get downloaded
+this is the folder where all the images will be downloaded 
