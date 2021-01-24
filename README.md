@@ -36,7 +36,7 @@ Once you are done with adding the creds, you can execute the bot
 python main.py
 ```
 Hopefully at this point, you might see "logged into reddit successfully" message being displayed.
-
+The images will be downloaded in the img folder.
 ### Additionals
 
 1) You can add your favourite subreddits in the subreddits.txt.
